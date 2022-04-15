@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pokemon = () => {
     return (
-        <p>Charizard</p>
+        <p>Type in a pokemon to get started</p>
     )
 }
 
