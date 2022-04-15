@@ -5,9 +5,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+        <h>Welcome to my PokeAPI!</h>
         <p>
-          Welcome to my PokeAPI!
+          i want a type box to go here :)
         </p>
         
         <Pokemon />
