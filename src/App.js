@@ -1,15 +1,13 @@
 import './App.css';
 import Pokemon from './Pokemon';
-//import Welcome from './Welcome';
+import PokemonForm from './InputBox';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome to my PokeAPI!</h1>
-        <p>
-          i want a type box to go here :)
-        </p>
-        
+      <h1 style={{ background : 'lightblue', color :'darkred' }}>Welcom to my PokeAPI!</h1>
+      
+        <PokemonForm />
         <Pokemon />
       </header>
     </div>
