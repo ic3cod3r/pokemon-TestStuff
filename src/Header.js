@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <div className="App-topbar">
             <center>
-            <h1 style={{ background : 'lightblue', color :'darkred' }}>Welcom to my PokeAPI!</h1>
+            <h1 style={{ background : 'yellow', color :'black' }}>Welcom to my PokeAPI!</h1>
             <PokemonForm />
             <Pokemon />
             <a href="https://pokeapi.co/">https://pokeapi.co/</a>
