@@ -94,6 +94,7 @@ class App extends Component {
       <div className="container">
         <h1 style={{ background : 'lightblue', color :'darkred' }}>Welcom to my PokeAPI!</h1>
         <PokemonForm />
+        <Pokemon />
           <div className="card-columns">
             {renderedPokemonList}
           </div>
