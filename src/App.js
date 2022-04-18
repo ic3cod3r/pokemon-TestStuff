@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
       <h1 style={{ background : 'lightblue', color :'darkred' }}>Welcom to my PokeAPI!</h1>
-      
+        <fetchStuff />
         <PokemonForm />
         <Pokemon />
       </header>
