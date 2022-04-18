@@ -1,9 +1,9 @@
 import React from 'react';
 import {Component} from 'react';
-import "./App.css"
-import PokeCard from './components/PokeCard'
+import "./App.css";
+import PokeCard from './components/PokeCard';
 
-class App extends Component {
+class fetchStuff extends Component {
   constructor() {
     super();
     this.state = {
@@ -58,4 +58,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default fetchStuff;
