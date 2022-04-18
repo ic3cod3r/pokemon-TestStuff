@@ -37,3 +37,63 @@ class PokemonForm extends React.Component {
     document.getElementById('root')
   );
   export default PokemonForm
+// https://pokeapi.co/api/v2/type/{id or name}/  <-- this tells what type of pokemon it is... a good place to start with the if statement inside the input box
+/*
+import React, { Component } from "react";
+//import PokemonCard from "./PokemonCard";
+//import Loading from "../layout/Loading";
+//import axios from "axios";
+
+export default class PokemonList extends Component {
+  state = {
+    url: "https://pokeapi.co/api/v2/pokemon?/",
+    pokemon: null,
+    pokeTemp: null,
+    searchValue: "",
+  };
+
+  //information about pokemon
+  async componentDidMount() {
+    const res = await axios.get(this.state.url);
+    this.setState({ pokemon: res.data["results"] });
+    this.setState({ pokeTemp: res.data["results"] });
+  }
+
+  //user search for pokemon
+  handleInputChange = (event) => {
+    const value = event.target.value;
+    this.setState({ searchValue: value });
+  };
+
+  filterPokemon = (userSearch) => {
+    const allPokemon = [...this.state.pokeTemp];
+    this.setState({
+      pokemon: allPokemon.filter((pokemon) =>
+        pokemon.name.toLowerCase().includes(userSearch.toLowerCase())
+      ),
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          value={this.state.searchValue}
+          onChange={this.handleInputChange}
+        />
+        {this.state.pokemon ? (
+          <div className="row">
+            {this.state.pokemon.map((pokemon) => (
+              
+            ))}
+          </div>
+        ) : (
+          
+        )}
+      </div>
+    );
+  }
+}
+export default PokemonForm
+*/
