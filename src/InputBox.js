@@ -36,12 +36,12 @@ class PokemonForm extends React.Component {
     <PokemonForm />,
     document.getElementById('root')
   );
-  export default PokemonForm
+export default PokemonForm
+
+
 // https://pokeapi.co/api/v2/type/{id or name}/  <-- this tells what type of pokemon it is... a good place to start with the if statement inside the input box
 /*
 import React, { Component } from "react";
-//import PokemonCard from "./PokemonCard";
-//import Loading from "../layout/Loading";
 import axios from "axios";
 
 export default class PokemonList extends Component {
@@ -95,5 +95,6 @@ export default class PokemonList extends Component {
     );
   }
 }
-export default PokemonForm
+//export default PokemonForm
+
 */
