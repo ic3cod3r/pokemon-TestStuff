@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 
 class PokemonForm extends React.Component {
     constructor(props) {
@@ -31,11 +31,12 @@ class PokemonForm extends React.Component {
       );
     }
   }
+ 
+  // ReactDOM.render(
+  //   <PokemonForm />,
+  //   document.getElementById('root')
+  // );
   
-  ReactDOM.render(
-    <PokemonForm />,
-    document.getElementById('root')
-  );
 export default PokemonForm
 
 
