@@ -85,7 +85,7 @@ class App extends Component {
     const {pokemonDetails} = this.state;
 
     const renderedPokemonList = pokemonDetails.map((pokemon, index) => {
-      return (<PokeCard pokemon={pokemon} />);
+      return (<PokeCard pokemon={pokemon} key={pokemon.id}/>);
     });
 
     return (
