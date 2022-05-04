@@ -4,7 +4,7 @@ import React from 'react'
 const PokeCard = ({pokemon}) => {
 
     return (
-        <div className="col-lg-3" key={pokemon.id} >
+        <div className="col-sm-4" key={pokemon.id} >
             <div className="card text-center mx-auto" >
                 <div className="card-header">
                     <a target="_blank" rel="noopener noreferrer" href={`https://bulbapedia.bulbagarden.net/wiki/${pokemon.name}_(Pokémon)`}>
