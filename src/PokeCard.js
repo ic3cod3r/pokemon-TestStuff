@@ -2,6 +2,7 @@ import React from 'react'
 
 
 const PokeCard = ({pokemon}) => {
+
     return (
         <div className="col-lg-3" key={pokemon.id} >
             <div className="card text-center mx-auto" >
@@ -20,6 +21,7 @@ const PokeCard = ({pokemon}) => {
                     <img src={pokemon.sprites['back_default']} alt={`Back-facing view of ${pokemon.name}`} />
                 </div>
             </div>
+
         </div>
     )
 };
