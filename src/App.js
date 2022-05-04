@@ -11,7 +11,7 @@ class App extends Component {
       pokemons : [],
       pokemonDetails : [],
       offset: 0,
-      loadNumber: 24      
+      loadNumber: 24
     }
     this.handleMoreClick = this.handleMoreClick.bind(this);
   }
@@ -26,9 +26,9 @@ class App extends Component {
       console.log("Offset: " + this.state.offset)
       this.getMorePokemon();
     });
-    
+
   }
-  
+
   componentDidMount() {
     this.getMorePokemon();
   }
@@ -41,7 +41,7 @@ class App extends Component {
       if (data) {
         this.setState({pokemons : data.results})
 
-        this.state.pokemons.map(pokemon => {
+        data.results.forEach(pokemon => {
           fetch(pokemon.url)
           .then(response => response.json())
           .then(data => {
@@ -49,7 +49,7 @@ class App extends Component {
               var temp = this.state.pokemonDetails
               temp.push(data)
               this.setState({pokemonDetails: temp})
-            }            
+            }
           })
           .catch(console.log)
         })
@@ -61,7 +61,11 @@ class App extends Component {
   render() {
     const {pokemonDetails} = this.state;
 
-    const renderedPokemonList = pokemonDetails.map((pokemon, index) => {
+    const sortedPokemonDetails = pokemonDetails;
+    sortedPokemonDetails.sort(pokemon => pokemon.id);
+
+    const renderedPokemonList = sortedPokemonDetails
+        .map((pokemon) => {
       return (<PokeCard pokemon={pokemon} key={pokemon.id}/>);
     });
 
@@ -69,7 +73,7 @@ class App extends Component {
       <div>
         <Header />
         <div className="container">
-          <div className="card-columns">
+          <div className="card-deck">
             {renderedPokemonList}
           </div>
         </div>
