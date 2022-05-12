@@ -60,6 +60,7 @@ class App extends Component {
 
     const renderedPokemonList = sortedPokemonDetails
         .map((pokemon) => {
+          // Pass pokemon ID instead of pokemon data
       return (<PokeCard pokemon={pokemon} key={pokemon.id}/>);
     });
 
