@@ -6,11 +6,11 @@ const PokeCard = ({ pokemon, pokemonId }) => {
     const [pokemonData, setPokemon] = useState(undefined);
 
     useEffect(() => {
-        // Make API call
-        const data = "???"
-        setPokemon(data);
+        const data = setPokemon(() => {
+            setPokemon(data);
+        });
     }, [pokemonId])
-
+   
     return (
         <div className="col-sm-4" key={pokemon.id} >
             <div className="card text-center mx-auto" >
