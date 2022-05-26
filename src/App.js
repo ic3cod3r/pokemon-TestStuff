@@ -60,7 +60,7 @@ class App extends Component {
 
     const renderedPokemonList = sortedPokemonDetails
         .map((pokemon) => {
-          // Pass pokemon ID instead of pokemon data
+          // am i supposed to do something here? pass pokemonId?
       return (<PokeCard pokemon={pokemon} key={pokemon.id}/>);
     });
 
