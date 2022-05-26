@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react'
 
 
+// const PokeCard = ({ pokemonId }) => {
+// const PokeCard = ({ pokemonUrl }) => {
 const PokeCard = ({ pokemon, pokemonId }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [pokemonData, setPokemon] = useState(undefined);
 
     useEffect(() => {
+        // const url = "https://pokeapi.co/api/v2/pokemon/id_goes_he";
+        // const detailsResponse = await fetch(pokemon.url);
+        // const detailsData = await detailsResponse.json();
+        // pokemonDetails.push(detailsData);
+
         const data = setPokemon(() => {
             setPokemon(data);
         });
     }, [pokemonId])
-   
+
     return (
         <div className="col-sm-4" key={pokemon.id} >
             <div className="card text-center mx-auto" >
