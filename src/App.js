@@ -9,7 +9,7 @@ class App extends Component {
     super();
     this.state = {
       pokemons : [],
-      pokemonDetails : [],
+      //pokemonDetails : [],
       offset: 0,
       loadNumber: 24
     }
@@ -35,17 +35,17 @@ class App extends Component {
 
   async getMorePokemon() {
     const url = "https://pokeapi.co/api/v2/pokemon?offset=" + this.state.offset + "&limit=" + this.state.loadNumber;
-    const pokemonDetails = this.state.pokemonDetails
+    //const pokemonDetails = this.state.pokemonDetails
     try {
       const pokemonResponse = await fetch(url);
       const pokemonData = await pokemonResponse.json();
       if (pokemonData) {
-        pokemonData.results.forEach(async (pokemon) => {
-          const detailsResponse = await fetch(pokemon.url);
-          const detailsData = await detailsResponse.json();
-          pokemonDetails.push(detailsData);
-        });
-        this.setState({ pokemons: pokemonData.results, pokemonDetails: pokemonDetails })
+        // pokemonData.results.forEach(async (pokemon) => {
+        //   const detailsResponse = await fetch(pokemon.url);
+        //   const detailsData = await detailsResponse.json();
+        //   pokemonDetails.push(detailsData);
+        // });
+        this.setState({ pokemons: pokemonData.results })
       }
     } catch(error) {
       console.log(error);
@@ -53,16 +53,16 @@ class App extends Component {
   }
 
   render() {
-    const {pokemonDetails} = this.state;
+    const {pokemons} = this.state;
 
-    const sortedPokemonDetails = pokemonDetails;
-    sortedPokemonDetails.sort((pokemon1, pokemon2) => pokemon1.id - pokemon2.id);
+    // const sortedPokemonDetails = pokemonDetails;
+    // sortedPokemonDetails.sort((pokemon1, pokemon2) => pokemon1.id - pokemon2.id);
 
-    const renderedPokemonList = sortedPokemonDetails
-        .map((pokemon) => {
-          // am i supposed to do something here? pass pokemonId?
-      return (<PokeCard pokemon={pokemon} key={pokemon.id}/>);
-    });
+    const renderedPokemonList = pokemons
+         .map((pokemon) => {
+           // am i supposed to do something here? pass pokemonId?
+       return (<PokeCard pokemonUrl={pokemon.url} key={pokemon.id}/>);
+     });
 
     return (
       <div>

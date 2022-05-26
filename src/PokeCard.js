@@ -2,21 +2,24 @@ import React, { useEffect, useState } from 'react'
 
 
 // const PokeCard = ({ pokemonId }) => {
-// const PokeCard = ({ pokemonUrl }) => {
-const PokeCard = ({ pokemon, pokemonId }) => {
+const PokeCard = ({ pokemonUrl }) => {
+//const PokeCard = ({ pokemon, pokemonId }) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const [pokemonData, setPokemon] = useState(undefined);
+    const [pokemon, setPokemon] = useState({});
 
     useEffect(() => {
-        // const url = "https://pokeapi.co/api/v2/pokemon/id_goes_he";
-        // const detailsResponse = await fetch(pokemon.url);
-        // const detailsData = await detailsResponse.json();
+        const getData = async () => {
+            const detailsResponse = await fetch(pokemonUrl);
+            const detailsData = await detailsResponse.json();
+            setPokemon(detailsData);
         // pokemonDetails.push(detailsData);
-
-        const data = setPokemon(() => {
-            setPokemon(data);
-        });
-    }, [pokemonId])
+        }
+         getData();
+        
+        // const data = setPokemon(() => {
+        //     setPokemon(data);
+        // });
+    }, [pokemonUrl])
 
     return (
         <div className="col-sm-4" key={pokemon.id} >
@@ -27,7 +30,7 @@ const PokeCard = ({ pokemon, pokemonId }) => {
                     </a>
                 </div>
                 <div className="card-body">
-                    { isExpanded && (
+                    {isExpanded && (
                         <>
                             <h6 className="card-subtitle mb-2 text-muted">Id: {pokemon.id}</h6>
                             <h6 className="card-subtitle mb-2 text-muted">Height: {pokemon.height}</h6>
@@ -36,9 +39,9 @@ const PokeCard = ({ pokemon, pokemonId }) => {
                             <h6 className="card-subtitle mb-2 text-muted">Type: {pokemon.type}</h6>
                         </>
                     )}
-                    <img src={pokemon.sprites['front_default']} alt={`Front-facing view of ${pokemon.name}`} />
-                    <img src={pokemon.sprites['back_default']} alt={`Back-facing view of ${pokemon.name}`} />
-                    <button onClick={() => setIsExpanded(!isExpanded)}>{ isExpanded ? "Collapse" : "Expand" }</button>
+                    <img src={pokemon.sprites?.['front_default']} alt={`Front-facing view of ${pokemon.name}`} />
+                    <img src={pokemon.sprites?.['back_default']} alt={`Back-facing view of ${pokemon.name}`} />
+                    <button onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? "Collapse" : "Expand"}</button>
                 </div>
             </div>
 
