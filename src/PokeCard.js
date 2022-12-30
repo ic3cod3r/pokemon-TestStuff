@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
 
-// const PokeCard = ({ pokemonId }) => {
+
 const PokeCard = ({ pokemonUrl }) => {
-//const PokeCard = ({ pokemon, pokemonId }) => {
+
     const [isExpanded, setIsExpanded] = useState(false);
     const [pokemon, setPokemon] = useState({});
 
@@ -12,13 +12,11 @@ const PokeCard = ({ pokemonUrl }) => {
             const detailsResponse = await fetch(pokemonUrl);
             const detailsData = await detailsResponse.json();
             setPokemon(detailsData);
-        // pokemonDetails.push(detailsData);
+     
         }
          getData();
         
-        // const data = setPokemon(() => {
-        //     setPokemon(data);
-        // });
+       
     }, [pokemonUrl])
 
     return (

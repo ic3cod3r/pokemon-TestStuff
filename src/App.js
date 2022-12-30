@@ -4,12 +4,21 @@ import "./App.css";
 import Header from './Header';
 import PokeCard from './PokeCard';
 
+// import { LineChart, Line } from 'recharts';
+// const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400}];
+
+// const renderLineChart = (
+//   <LineChart width={400} height={400} data={data}>
+//     <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+//   </LineChart>
+// );
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       pokemons : [],
-      //pokemonDetails : [],
+      
       offset: 0,
       loadNumber: 24
     }
@@ -35,16 +44,12 @@ class App extends Component {
 
   async getMorePokemon() {
     const url = "https://pokeapi.co/api/v2/pokemon?offset=" + this.state.offset + "&limit=" + this.state.loadNumber;
-    //const pokemonDetails = this.state.pokemonDetails
+   
     try {
       const pokemonResponse = await fetch(url);
       const pokemonData = await pokemonResponse.json();
       if (pokemonData) {
-        // pokemonData.results.forEach(async (pokemon) => {
-        //   const detailsResponse = await fetch(pokemon.url);
-        //   const detailsData = await detailsResponse.json();
-        //   pokemonDetails.push(detailsData);
-        // });
+
         this.setState({ pokemons: pokemonData.results })
       }
     } catch(error) {
@@ -63,6 +68,8 @@ class App extends Component {
            // am i supposed to do something here? pass pokemonId?
        return (<PokeCard pokemonUrl={pokemon.url} key={pokemon.id}/>);
      });
+     
+
 
     return (
       <div>
